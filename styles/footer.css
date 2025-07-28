@@ -1,6 +1,10 @@
+footer {
+  padding-bottom: 2rem;
+}
+
 .indicators {
   position: absolute;
-  bottom: 5px;
+  bottom: .5rem;
   left: 50%;
   transform: translateX(-50%); 
   display: flex;

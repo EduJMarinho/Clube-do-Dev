@@ -8,14 +8,14 @@
 .container::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 31.25rem;
+  height: 31.25rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(50px);
+  filter: blur(3.125rem);
   z-index: 1;
   animation: pulse 4s infinite;
 }
@@ -31,7 +31,7 @@
   }
 }
 
-.list {
+.list {  
   width: 80%;
   height: 100%;
   margin: 0 auto;
@@ -44,12 +44,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* transform: ; */
   opacity: 0;
+
+  transform: translateX(100vw);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
 }
 
 .active {
   opacity: 1;
+
+  transform: translateX(0);
 }
 
 .product-img {
@@ -65,12 +69,22 @@
 .product-img img {
   max-width: 80%;
   max-height: 60%;
-  filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
+  filter: drop-shadow(0 0 1.875rem rgba(0, 247, 255, 0.3));
+
+  transform: translateX(20rem);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition-delay: 0.5s;
+}
+
+.active .product-img img{
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .content {
   width: 55%;
-  padding-right: 80px ;
+  padding-right: 5rem ;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -84,8 +98,7 @@
   color: #00f7ff;
   font-weight: 600;
   letter-spacing: 2px;
-  margin-bottom: 10px;
-  /* opacity: 0;   */
+  margin-bottom: .625rem;
 }
 
 .product-name {
@@ -93,29 +106,40 @@
   font-family: "Orbitron", sans-serif;
   line-height: 1.1;
   margin-bottom: 0px;
+
+  transform: translateX(20rem);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition-delay: 0.5s;
+}
+
+.active .product-name{
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .description {
-font-size: 1.1 rem;
+font-size: 1rem;
 color: #b8b8d0;
 line-height: 1.6;
-margin-bottom: 30px;
-max-width: 600px ;
+margin-bottom: 1.875rem;
+max-width: 37.5rem ;
 }
 
 .btn {
-  padding: 12px 16px;
+  padding: .75rem 1rem;
   background: linear-gradient(90deg, #00f7ff, #071a36);
-  border-radius: 30px;
+  border-radius: 1.875rem;
   color: #000;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 600;  
   cursor: pointer;
   border: none;
 }
 
 .btn:hover {
   background: linear-gradient(90deg,  #3968af, #639fa2);
+  cursor: pointer;
 }
 
 .arrows {
@@ -162,29 +186,31 @@ max-width: 600px ;
 }
 
 .circle:nth-child(1){
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   top: 10%;
   left: 10%;
 }
 
 .circle:nth-child(2){
-  width: 300px;
-  height: 300px;
+  width: 18.75rem;
+  height: 18.75rem;
   top: 55%;
   left: 70%;
 }
 
 .circle:nth-child(3){
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   top: 70%;
   left: 20%;
 }
 
 .circle:nth-child(4){
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   top: 5%;
   left: 70%;
 }
+
+
