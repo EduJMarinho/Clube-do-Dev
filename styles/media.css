@@ -1,0 +1,145 @@
+@media (max-width: 50em) {
+  body {
+    overflow-y: auto;
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  header { 
+    position: relative;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-top: .2rem;
+    padding-bottom: 10rem;     */
+    padding: .2rem 2rem 10rem 0;
+  }
+
+  .logo {
+    font-size: 2rem;    
+   }
+
+  header nav ul {
+    width: 100%;
+    display: flex;
+  
+    gap: 1.5rem;
+    padding-top: .3rem;
+  }
+
+  .container {
+    height: auto;
+    padding-top: 6rem;
+    overflow: visible;
+    background: transparent
+  }
+
+  .list {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100vw);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    z-index: 0;
+  }
+
+  .item.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  .product-img {
+    width: 11rem;
+    height: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-img img {
+    max-width: 90%;
+    max-height: 40vh;
+    transform: translateX(20vw);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+  }
+
+  .item.active .product-img img {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-name {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    transform: translateX(20vw);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+  }
+
+  .item.active .product-name {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin: 1rem 0;
+    max-width: 100%;
+    transform: translateY(2rem);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.7s;
+  }
+
+  .item.active .description {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    width: 100%;
+    max-width: 7rem;
+    transform: translateY(1rem);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;   
+  }
+
+  .item.active .btn {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .arrows,
+  .arrow-btn,
+  .tech-circle   {
+margin-top: 13rem ;
+ background-color: none;
+  }
+
+ footer {
+  opacity: 0;
+ }
+ }
